@@ -18,7 +18,7 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 echo "---------> USING MY CUSTOM BUILDPACK"
-echo "---------> ENV_DIR is $ENV_DIR"
+echo "---------> ARGS ARE $1 $2 $3"
 
 # Inject APP env variable
 ls $ENV_DIR
