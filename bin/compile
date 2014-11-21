@@ -17,10 +17,14 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo "---------> USING MY CUSTOM BUILDPACK"
+
 # Inject APP env variable
 if [ -d "$ENV_DIR/APP" ]; then
   export "APP=$(cat $ENV_DIR/APP)"
 fi
+
+echo "----------> APP is $APP"
 
 CACHED_DIRS=".heroku"
 
