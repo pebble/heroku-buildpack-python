@@ -19,9 +19,12 @@ ENV_DIR=$3
 
 echo "---------> USING MY CUSTOM BUILDPACK"
 echo "---------> ARGS ARE $1 $2 $3"
+echo "---------> ENV_DIR ID $ENV_DIR" 
 
 # Inject APP env variable
-ls $ENV_DIR
+if [ -d "$ENV_DIR/APP" ]; then
+  export "APP=$(cat $ENV_DIR/APP)"
+fi
 
 echo "----------> APP is $APP"
 
