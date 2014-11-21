@@ -17,6 +17,10 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+# Inject APP env variable
+if [ -d "$ENV_DIR/APP" ]; then
+  export "APP=$(cat $ENV_DIR/APP)"
+fi
 
 CACHED_DIRS=".heroku"
 
