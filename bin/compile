@@ -20,8 +20,11 @@ ENV_DIR=$3
 echo "---------> USING MY CUSTOM BUILDPACK"
 
 # Inject APP env variable
-if [ -d "$ENV_DIR/APP" ]; then
-  export "APP=$(cat $ENV_DIR/APP)"
+if [ -d "$ENV_DIR" ]; then
+  for e in $(ls $env_dir); do
+    echo "$e"
+  done
+  export "APP=$(cat ${ENV_DIR}/APP)"
 fi
 
 echo "----------> APP is $APP"
